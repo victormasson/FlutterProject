@@ -10,8 +10,8 @@ class ChatItemList extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Dismissible(
       key: new Key(chatModel.key ?? ""),
-      background: new Container(color: Colors.green),
-      secondaryBackground: new Container(color: Colors.red),
+      background: new Container(color: Colors.orange),
+      secondaryBackground: new Container(color: Colors.yellow),
       onDismissed: (direction) {
         direction == DismissDirection.endToStart
             ? Scaffold.of(context)
@@ -22,7 +22,7 @@ class ChatItemList extends StatelessWidget {
       child: new ListTile(
           leading: new CircleAvatar(
             foregroundColor: Theme.of(context).primaryColor,
-            backgroundColor: Colors.grey,
+            backgroundColor: Colors.white,
             backgroundImage: new NetworkImage(chatModel.avatarUrl ?? ""),
           ),
           title: new Row(
@@ -30,13 +30,13 @@ class ChatItemList extends StatelessWidget {
             children: <Widget>[
               new Text(
                 chatModel.name ?? "",
-                style: new TextStyle(fontWeight: FontWeight.bold),
+                style: new TextStyle(fontWeight: FontWeight.bold, fontsize: 15),
               ),
               new Text(chatModel.time ?? "",
                   style: new TextStyle(
                       fontSize: 14.0,
-                      color: Colors.grey,
-                      fontStyle: FontStyle.italic)),
+                      color: Colors.white,
+                      fontStyle: FontStyle.normal)),
             ],
           ),
           subtitle: new Container(
